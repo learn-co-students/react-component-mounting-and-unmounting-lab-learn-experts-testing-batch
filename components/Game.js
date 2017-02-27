@@ -3,8 +3,7 @@ const Pancake = require('./Pancake');
 
 class Game extends React.Component {
 
-  // TODO: create a componentWillMount() which will set the current time
-
+  // TODO: create a componentWillMount() which will set the current time 
   setCurrentTime() {
     this.setState({ time: new Date(Date.now())});
   }
@@ -36,6 +35,11 @@ class Game extends React.Component {
     };
     this.addPancake = this.addPancake.bind(this);
     this.takeItOff = this.takeItOff.bind(this);
+    this.setCurrentTime = this.setCurrentTime.bind(this)
+  }
+
+  componentWillMount() {
+    this.setCurrentTime()
   }
 
   render() {
