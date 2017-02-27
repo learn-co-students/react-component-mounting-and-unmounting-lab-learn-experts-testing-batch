@@ -58,6 +58,16 @@ class Pancake extends React.Component {
     this.updateCounter = this.updateCounter.bind(this);
     this.flip = this.flip.bind(this);
     this.takeItOff = this.takeItOff.bind(this);
+    this.startInterval = this.startInterval.bind(this);
+    this.cleanUpInterval = this.cleanUpInterval.bind(this);
+  }
+
+  componentDidMount() {
+    this.startInterval()
+  }
+
+  componentWillUnmount() {
+    this.cleanUpInterval()
   }
 
   render() {
